@@ -134,7 +134,7 @@ int electorama_test_hare01() {
 
 	long seats_allocated = 0;
 	long results[total_parties];
-	seats_allocated = largest_remainder_calc(seats, total_parties, votes, DROOP_QUOTA, results);
+	seats_allocated = largest_remainder_calc(seats, total_parties, votes, HARE_QUOTA, results);
 
 	_assert(seats_allocated == seats);
 	for (long i = 0; i < total_parties; i++) {
@@ -176,7 +176,7 @@ int electorama_test_hare02() {
 
 	long seats_allocated = 0;
 	long results[total_parties];
-	seats_allocated = largest_remainder_calc(seats, total_parties, votes, DROOP_QUOTA, results);
+	seats_allocated = largest_remainder_calc(seats, total_parties, votes, HARE_QUOTA, results);
 
 	_assert(seats_allocated == seats);
 	for (long i = 0; i < total_parties; i++) {
@@ -217,7 +217,7 @@ int fairvote_test_hare() {
 
 	long seats_allocated = 0;
 	long results[total_parties];
-	seats_allocated = largest_remainder_calc(seats, total_parties, votes, DROOP_QUOTA, results);
+	seats_allocated = largest_remainder_calc(seats, total_parties, votes, HARE_QUOTA, results);
 
 	_assert(seats_allocated == seats);
 	for (long i = 0; i < total_parties; i++) {
@@ -257,7 +257,7 @@ int polyas_test_hare() {
 
 	long seats_allocated = 0;
 	long results[total_parties];
-	seats_allocated = largest_remainder_calc(seats, total_parties, votes, DROOP_QUOTA, results);
+	seats_allocated = largest_remainder_calc(seats, total_parties, votes, HARE_QUOTA, results);
 
 	_assert(seats_allocated == seats);
 	for (long i = 0; i < total_parties; i++) {
@@ -297,7 +297,7 @@ int mlwiki_test_hare01() {
 
 	long seats_allocated = 0;
 	long results[total_parties];
-	seats_allocated = largest_remainder_calc(seats, total_parties, votes, DROOP_QUOTA, results);
+	seats_allocated = largest_remainder_calc(seats, total_parties, votes, HARE_QUOTA, results);
 
 	_assert(seats_allocated == seats);
 	for (long i = 0; i < total_parties; i++) {
@@ -329,7 +329,7 @@ int mlwiki_test_hare02() {
 	seats = 10;
 
 	/* the expected number of seats for each
-	party is as follows TODO this is arbitrary*/
+	party is as follows TODO this is arbitrary due to the tie */
 	expected_results[0] = 6;
 	expected_results[1] = 2;
 	expected_results[2] = 1;
@@ -337,7 +337,7 @@ int mlwiki_test_hare02() {
 
 	long seats_allocated = 0;
 	long results[total_parties];
-	seats_allocated = largest_remainder_calc(seats, total_parties, votes, DROOP_QUOTA, results);
+	seats_allocated = largest_remainder_calc(seats, total_parties, votes, HARE_QUOTA, results);
 
 	_assert(seats_allocated == seats);
 	for (long i = 0; i < total_parties; i++) {
@@ -353,10 +353,10 @@ int all_tests() {
 	_verify(wiki_test_droop);
 	_verify(fairvote_test_hare);
 	_verify(polyas_test_hare);
+	_verify(electorama_test_hare01);
 	_verify(electorama_test_hare02);
 	_verify(mlwiki_test_hare01);
 	_verify(mlwiki_test_hare02);
-	_verify(electorama_test_hare01);
 	return 0;
 }
 
