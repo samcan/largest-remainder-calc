@@ -347,6 +347,44 @@ int mlwiki_test_hare02() {
 	return 0;
 }
 
+int test_tie_distribute_parties() {
+	/* This is to help verify that in cases of ties and multiple seats
+	remaining that seats are given to multiple parties rather than all to
+	the same one. */
+	long total_parties = 3;
+	long votes[total_parties];
+	long seats;
+
+	long expected_results[total_parties];
+
+	/* the votes were split among the following
+	parties */
+	votes[0] = 100;
+	votes[1] = 100;
+	votes[2] = 100;
+
+
+	/* there are 8 seats up for grabs */
+	seats = 8;
+
+	/* the expected number of seats for each
+	party is as follows TODO this is arbitrary due to the tie */
+	expected_results[0] = 3;
+	expected_results[1] = 3;
+	expected_results[2] = 2;
+
+	long seats_allocated = 0;
+	long results[total_parties];
+	seats_allocated = largest_remainder_calc(seats, total_parties, votes, HARE_QUOTA, results);
+
+	_assert(seats_allocated == seats);
+	for (long i = 0; i < total_parties; i++) {
+		_assert(results[i] == expected_results[i]);
+	}
+
+	return 0;
+}
+
 
 int all_tests() {
 	_verify(wiki_test_hare);
@@ -357,6 +395,7 @@ int all_tests() {
 	_verify(electorama_test_hare02);
 	_verify(mlwiki_test_hare01);
 	_verify(mlwiki_test_hare02);
+	_verify(test_tie_distribute_parties);
 	return 0;
 }
 
