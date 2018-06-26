@@ -78,3 +78,9 @@ Running `example` will provide the below output:
 
 ### Returns
 Returns a `long` with the number of seats allocated. Barring any errors, should be equal to `n_seats`.
+
+## Issues
+At this time, the library does not correctly resolve tie situations.
+
+## License
+`largest_remainder_calc` is licensed under the MIT License.
