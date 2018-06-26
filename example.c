@@ -1,4 +1,4 @@
-/* main.c
+/* example.c
 Sample code showing how to use the library.*/
 #include <stdio.h>
 #include "largest_remainder_calc.h"
