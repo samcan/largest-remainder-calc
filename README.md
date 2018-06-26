@@ -60,3 +60,21 @@ Running `example` will provide the below output:
     5	   1
     6	   0
     Total	  10
+
+
+## `largest_remainder_calc` function definition
+
+    long largest_remainder_calc(long n_seats,
+                                long n_parties,
+                                long votes[],
+                                int quota_method,
+                                long results[]);
+### Parameters
+* `n_seats` is a `long` specifying the number of seats to be apportioned.
+* `n_parties` is a `long` specifying the number of parties voted for. This should be equal to the number of elements in the `votes` array.
+* `votes` is a `long[]` specifying the number of votes for each party. The number of elements in this array should be equal to `n_parties`.
+* `quota_method` should be either `HARE_QUOTA` or `DROOP_QUOTA`; this determines which method is used for calculating the quota, either Hare's quota or Droop's quota respectively.
+* `results` is a `long[]` that is the number of seats apportioned to each party, with the element index being the party's number. You do not need to initialize the array passed in.
+
+### Returns
+Returns a `long` with the number of seats allocated. Barring any errors, should be equal to `n_seats`.
