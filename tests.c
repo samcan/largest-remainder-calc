@@ -1,6 +1,11 @@
 /* tests.c
 
-see http://eradman.com/posts/tdd-in-c.html which is based off
+Copyright (C) 2018	Sam Cantrell
+
+This file is licensed under the MIT License. Please see LICENSE
+for more information.
+
+See http://eradman.com/posts/tdd-in-c.html which is based off
 http://www.jera.com/techinfo/jtns/jtn002.html which states we can use
 the original code for any purpose, as long as we realise that it comes
 with no warranty.

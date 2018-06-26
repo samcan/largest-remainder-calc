@@ -1,5 +1,12 @@
 /* example.c
+
+Copyright (C) 2018	Sam Cantrell
+
+This file is licensed under the MIT License. Please see LICENSE
+for more information.
+
 Sample code showing how to use the library.*/
+
 #include <stdio.h>
 #include "largest_remainder_calc.h"
 
