@@ -118,7 +118,11 @@ void sort_array_desc(float numbers[], long len) {
 }
 
 int float_equals(float a, float b) {
-	if ((a - b) < FLT_EPSILON) {
+	float diff = a - b;
+	if (diff < 0)
+		diff *= -1;
+
+	if (diff < FLT_EPSILON) {
 		return INTERNAL_TRUE;
 	} else {
 		return INTERNAL_FALSE;
