@@ -4,6 +4,7 @@ Sample code showing how to use the library.*/
 #include "largest_remainder_calc.h"
 
 int main() {
+	/* Example from https://en.wikipedia.org/wiki/Largest_remainder_method */
 	long total_parties = 6;
 	long votes[total_parties];
 	long seats;
